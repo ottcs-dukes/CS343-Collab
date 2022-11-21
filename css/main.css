@@ -98,23 +98,23 @@ main {
 }
 
 main.home {
-    background: url('/images/home.jpg');
+    background: url('../images/home.jpg');
 }
 
 main.news {
-    background: url('/images/news.jpg');
+    background: url('../images/news.jpg');
 }
 
 main.events {
-    background: url('/images/events.jpg');
+    background: url('../images/events.jpg');
 }
 
 main.sports {
-    background: url('/images/sports.jpg');
+    background: url('../images/sports.jpg');
 }
 
 main.signup {
-    background: url('/images/signup.jpg');
+    background: url('../images/signup.jpg');
 }
 
 main.hero {
