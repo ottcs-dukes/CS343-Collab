@@ -7,6 +7,22 @@
         return element;
     }
 
+    let meta = document.createElement('meta');
+    meta.name="viewport";
+    meta.content="width=device-width, initial-scale=1";
+    meta.charset="UTF-8";
+    document.head.append(meta);
+
+    let bStyle = document.createElement('link');
+    bStyle.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css";
+    bStyle.rel = "stylesheet";
+    document.head.append(bStyle);
+
+    let myStyle = document.createElement('link');
+    myStyle.href = "css/main.css";
+    myStyle.rel = "stylesheet";
+    document.head.append(myStyle);
+
     let header = build('header', "container-fluid p-2 bg-purple");
     let img = build('img', "mx-auto my-2 d-block");
     img.src = "images/logo.png";
@@ -30,4 +46,8 @@
     });
     footer.append(ul);
     document.body.append(footer);
+
+    let bScript = document.createElement('script');
+    bScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js";
+    document.body.append(bScript);
 })()
