@@ -47,6 +47,10 @@
     footer.append(ul);
     document.body.append(footer);
 
+    let buildScript = document.createElement('script');
+    buildScript.src = "scripts/build.js";
+    document.body.append(buildScript);
+
     let bScript = document.createElement('script');
     bScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js";
     document.body.append(bScript);
