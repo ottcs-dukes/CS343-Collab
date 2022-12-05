@@ -1,5 +1,16 @@
-[  {    "title": "First article",    "author": "John Doe",    "date": "January 01, 2021",    
-        "content": "This is the first article. It is about a very interesting topic that will surely capture the attention of the reader."  },  
-   
-   {    "title": "Second article",    "author": "Jane Doe",    "date": "January 02, 2021",    
-        "content": "This is the second article. It is about a different, but equally interesting topic that will also captivate the reader."  }]
+{
+     "content": [
+          {
+               "title": "First article",
+               "author": "John Doe",
+               "date": "January 01, 2021",
+               "content": "This is the first article. It is about a very interesting topic that will surely capture the attention of the reader."
+          },
+          {
+               "title": "Second article",
+               "author": "Jane Doe",
+               "date": "January 02, 2021",
+               "content": "This is the second article. It is about a different, but equally interesting topic that will also captivate the reader."
+          }
+     ]
+}
