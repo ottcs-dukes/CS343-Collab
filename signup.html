@@ -60,24 +60,16 @@
     <script>
     const textForm = document.querySelector("#textForm")
     textForm.addEventListener("submit", (ev) => {
-
         ev.preventDefault();
         ev.stopPropagation();
-
         window.alert("You've signed up " + document.getElementById("text-name").value + " at " + document.getElementById("text-number").value);
-
-
     }) 
     
     const emailForm = document.querySelector("#emailForm")
     emailForm.addEventListener("submit", (ev) => {
-
         ev.preventDefault();
         ev.stopPropagation();
-
         window.alert("You've signed up " + document.getElementById("email-name").value + " at " + document.getElementById("email-address").value);
-
-
     }) 
     
     </script>
