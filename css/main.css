@@ -57,3 +57,10 @@ main {
     background-color: var(--jmuPurple);
     opacity: 0.8;
 }
+
+.text-purple {
+    color: var(--jmuPurple);
+}
+.text-gold {
+    color: var(--jmuGold);
+}
