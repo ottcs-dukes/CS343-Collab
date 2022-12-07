@@ -27,6 +27,22 @@ function buildCard(article) {
   return outer
 }
 
+function exportData() {
+  let a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(newsArticles, [null], 2)], { type: "application/json" }));
+  a.download = "articles.json";
+  document.body.append(a);
+  a.click();
+}
+
+const exportButton = document.createElement('button');
+exportButton.addEventListener('click', exportData);
+exportButton.textContent ="Export Articles";
+exportButton.classList.add("btn", "btn-purple", "text-white", "animate")
+
+const targetPage = document.getElementsByTagName('main')[0]
+targetPage.appendChild(exportButton);
+
 fetch('articles.json').then(response => {
   response.text().then((text) => {
     newsArticles = JSON.parse(text)["content"];
