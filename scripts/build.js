@@ -40,7 +40,7 @@ exportButton.addEventListener('click', () => {exportData(newsArticles)});
 exportButton.textContent ="Export Articles";
 exportButton.classList.add("btn", "btn-purple", "text-white", "animate")
 
-const targetPage = document.getElementsByTagName('main')[0]
+const targetPage = document.getElementsByTagName('aside')[0]
 targetPage.appendChild(exportButton);
 
 fetch('articles.json').then(response => {
