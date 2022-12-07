@@ -1,4 +1,4 @@
-let newsArticles;
+let newsArticles, exportButton, main;
 
 function buildCard(article) {
   let outer = document.createElement('div');
@@ -35,26 +35,33 @@ function exportData(data) {
   a.click();
 }
 
-const exportButton = document.createElement('button');
-exportButton.addEventListener('click', () => {exportData(newsArticles)});
-exportButton.textContent ="Export Articles";
-exportButton.classList.add("btn", "btn-purple", "text-white", "animate")
+function createButtons() {
+  exportButton = document.createElement('button');
+  exportButton.addEventListener('click', () => { exportData(newsArticles) });
+  exportButton.textContent = "Export Articles";
+  exportButton.classList.add("btn", "btn-purple", "text-white", "animate")
 
-const targetPage = document.getElementsByTagName('aside')[0]
-targetPage.appendChild(exportButton);
+  main.appendChild(exportButton);
+}
 
-fetch('articles.json').then(response => {
-  response.text().then((text) => {
-    newsArticles = JSON.parse(text)["content"];
-    console.log(newsArticles);
-    // get the target page element where the articles will be inserted
-    const targetPage = document.getElementsByTagName('main')[0];
+(function () {
+  main = document.getElementsByTagName('main')[0];
+  fetch('articles.json').then(response => {
+    response.text().then((text) => {
+      newsArticles = JSON.parse(text)["content"];
+      console.log(newsArticles);
+      // get the target page element where the articles will be inserted
 
-    // iterate over the news articles and create HTML elements for each article
-    for (const article of newsArticles) {
-      // add the article element to the target page
-      targetPage.appendChild(buildCard(article));
-    }
-  })
-});
+      // iterate over the news articles and create HTML elements for each article
+      for (const article of newsArticles) {
+        // add the article element to the target page
+        main.appendChild(buildCard(article));
+      }
+
+      createButtons();
+    })
+  });
+})();
+
+
 
