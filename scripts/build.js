@@ -6,12 +6,18 @@ function buildCard(article) {
 
   let title = document.createElement('h1');
   title.classList.add("card-header");
+
+  if (article.new) {
+  title.classList.add('bg-gold', 'text-white');
+  }
+
   title.textContent = article.title;
   outer.append(title);
 
   let content = document.createElement('p');
   content.classList.add("card-body");
-  content.textContent = article.content;
+  content.innerText = article.content;
+  content.innerText += '\n\n Views: ' + article.views;
   outer.append(content);
 
   let footer = document.createElement('div');
