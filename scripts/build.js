@@ -44,17 +44,31 @@ function exportData(data) {
 
 function createButtons() {
   // Add
+  addButton = document.createElement('button');
+  addButton.addEventListener('click', () => { exportData(newsArticles) });
+  addButton.textContent = "Add an article";
+  addButton.classList.add("btn", "btn-purple", "text-white", "animate", "m-1");
+  main.appendChild(addButton);
 
   // Edit
+  editButton = document.createElement('button');
+  editButton.addEventListener('click', () => { exportData(newsArticles) });
+  editButton.textContent = "Edit an article";
+  editButton.classList.add("btn", "btn-purple", "text-white", "animate", "m-1");
+  main.appendChild(editButton);
 
   // Delete
+  deleteButton = document.createElement('button');
+  deleteButton.addEventListener('click', () => { exportData(newsArticles) });
+  deleteButton.textContent = "Delete an article";
+  deleteButton.classList.add("btn", "btn-purple", "text-white", "animate", "m-1");
+  main.appendChild(deleteButton);
 
   // Export
   exportButton = document.createElement('button');
   exportButton.addEventListener('click', () => { exportData(newsArticles) });
-  exportButton.textContent = "Export Articles";
-  exportButton.classList.add("btn", "btn-purple", "text-white", "animate")
-
+  exportButton.textContent = "Export articles";
+  exportButton.classList.add("btn", "btn-purple", "text-white", "animate", "m-1");
   main.appendChild(exportButton);
 }
 
