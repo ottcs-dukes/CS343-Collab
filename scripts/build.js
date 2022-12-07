@@ -34,6 +34,10 @@ function buildCard(article) {
   return outer
 }
 
+function render() {
+  newsArticles.map((article) => {main.appendChild(buildCard(article))})
+}
+
 function exportData(data) {
   let a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
@@ -47,16 +51,7 @@ function exportData(data) {
   fetch('articles.json').then(response => {
     response.text().then((text) => {
       newsArticles = JSON.parse(text)["content"];
-      console.log(newsArticles);
-      // get the target page element where the articles will be inserted
-
-      // iterate over the news articles and create HTML elements for each article
-      for (const article of newsArticles) {
-        // add the article element to the target page
-        main.appendChild(buildCard(article));
-      }
-
-      createButtons();
+      render();
     })
   });
 })();
