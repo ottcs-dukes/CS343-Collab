@@ -3,28 +3,38 @@
           {
                "title": "Back in the civilian ranks and looking to lead",
                "content": "Outreach program teaches veterans how to apply lessons learned on-duty.",
-               "href": "https://www.jmu.edu/news/cob/2022/12/12-01-back-in-the-civilian-ranks-looking-to-lead.shtml"
+               "href": "https://www.jmu.edu/news/cob/2022/12/12-01-back-in-the-civilian-ranks-looking-to-lead.shtml",
+               "views": 1,
+               "new": false              
           },
           {
                "title": "Retiring Hart School faculty impact JMU students in perpetuity",
                "content": "Hart School Professors Neil Marrin and Tassie Pippert (’11, ’13 M.Ed.) create a scholarship to support study abroad and experiential learning opportunities for JMU Hart School students.",
-               "href": "https://www.jmu.edu/news/hartschool/2022/12-06-retiring-hart-school-faculty-impact-jmu-students-in-perpetuity.shtml"
+               "href": "https://www.jmu.edu/news/hartschool/2022/12-06-retiring-hart-school-faculty-impact-jmu-students-in-perpetuity.shtml",
+               "views": 0,
+               "new": true
           },
          
           {
                "title": "“Power” Dukes lead the way in commerce",
                "content": "James Madison University is well represented in the Virginia Business 2022 Power List of the 500 most influential Virginians. A dozen Dukes made the magazine’s Virginia 500, which profiles executives across 20 sectors of the commonwealth’s economy.",
-               "href": "https://www.jmu.edu/news/2022/10/03-dukes-on-virginia-500-list.shtml"
+               "href": "https://www.jmu.edu/news/2022/10/03-dukes-on-virginia-500-list.shtml",
+               "views": 2,
+               "new": false
           },
           {
                "title": "Halftime on the Quad",
                "content": "It’s officially fall! As we prepare for a fun and busy season, including Family Weekend this coming weekend and fall break right around the corner, we want to take a moment to reflect on how far you’ve already come. You’ve made it halfway through the semester!",
-               "href": "https://www.jmu.edu/news/2022/09/28-halftime-on-the-quad.shtml"
+               "href": "https://www.jmu.edu/news/2022/09/28-halftime-on-the-quad.shtml",
+               "views": 8,
+               "new": false 
           },
           {
                "title": "JMU professors propose new program for students on the autism spectrum",
                "content": "Zachary Bortolot, director and professor of JMU’s Geography Program, and Laura Desportes, professor of education, team up to create a Comprehensive Transition Postsecondary (CTP) program for individuals on the autism spectrum.",
-               "href": "https://www.jmu.edu/news/cise/2022/12-1-jmu-professors-propose-program-for-students-on-autism-spectrum.shtml"
+               "href": "https://www.jmu.edu/news/cise/2022/12-1-jmu-professors-propose-program-for-students-on-autism-spectrum.shtml",
+               "views": 9,
+               "new": false 
           }
           
      ]
