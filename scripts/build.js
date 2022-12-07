@@ -27,16 +27,16 @@ function buildCard(article) {
   return outer
 }
 
-function exportData() {
+function exportData(data) {
   let a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(newsArticles, [null], 2)], { type: "application/json" }));
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
   a.download = "articles.json";
   document.body.append(a);
   a.click();
 }
 
 const exportButton = document.createElement('button');
-exportButton.addEventListener('click', exportData);
+exportButton.addEventListener('click', () => {exportData(newsArticles)});
 exportButton.textContent ="Export Articles";
 exportButton.classList.add("btn", "btn-purple", "text-white", "animate")
 
