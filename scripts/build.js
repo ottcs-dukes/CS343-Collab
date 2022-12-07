@@ -8,7 +8,7 @@ function buildCard(article) {
   title.classList.add("card-header");
 
   if (article.new) {
-  title.classList.add('bg-gold', 'text-white');
+    title.classList.add('bg-purple', 'text-white');
   }
 
   title.textContent = article.title;
