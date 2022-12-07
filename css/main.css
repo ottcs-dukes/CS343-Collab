@@ -17,6 +17,10 @@
     background-color: var(--jmuPurple);
 }
 
+.bg-gold {
+    background-color: var(--jmuGold);
+}
+
 header img {
     max-height: 45px;
     max-width: 100%;
