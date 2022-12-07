@@ -14,6 +14,16 @@ function buildCard(article) {
   content.textContent = article.content;
   outer.append(content);
 
+  let footer = document.createElement('div');
+  footer.classList.add("card-footer");
+
+  let btn = document.createElement('a');
+  btn.classList.add("btn", "btn-purple", "text-white", "animate");
+  btn.textContent = "Read the full article";
+  footer.append(btn);
+
+  outer.append(footer);
+
   return outer
 }
 
