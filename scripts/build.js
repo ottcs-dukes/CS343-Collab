@@ -20,6 +20,7 @@ function buildCard(article) {
   let btn = document.createElement('a');
   btn.classList.add("btn", "btn-purple", "text-white", "animate");
   btn.textContent = "Read the full article";
+  btn.href = article.href;
   footer.append(btn);
 
   outer.append(footer);
@@ -36,6 +37,13 @@ function exportData(data) {
 }
 
 function createButtons() {
+  // Add
+
+  // Edit
+
+  // Delete
+
+  // Export
   exportButton = document.createElement('button');
   exportButton.addEventListener('click', () => { exportData(newsArticles) });
   exportButton.textContent = "Export Articles";
