@@ -29,7 +29,7 @@
         </div>
         <div class="card mt-5 mx-auto d-block">
             <h1 class="card-header">Email: Right to your inbox</h1>
-            <form class="form-group card-body" onsubmit="return false">
+            <form id="emailForm" class="form-group card-body" onsubmit="return false">
                 <label for="email-name" id="email-name-label">Name:</label><br>
                 <input aria-labelledby="email-name-label" class="form-control" type="text" id="email-name" name="email-name"
                   value="FirstName LastName"><br>
@@ -41,11 +41,11 @@
         </div>
         <div class="card mt-5 mx-auto d-block">
             <h1 class="card-header">Text: Keeping it Casual</h1>
-            <form onsubmit="return validateForm()" class="form-group card-body">
+            <form id="textForm" class="form-group card-body">
                 <label for="text-name" for="text-name-label">Name:</label><br>
                 <input aria-labelledby="text-name-label" class="form-control" type="text" id="text-name" name="text-name"
                        value="FirstName LastName"><br>
-                <label for="text-number">Email:</label><br>
+                <label for="text-number">Text:</label><br>
                 <input class="form-control" type="tel" name="text-number" id="text-number" value="123-456-7890"
                        pattern="^\d{3}-\d{3}-\d{4}$"><br>
                 <input id="textSubmit" class="btn btn-purple text-white animate" type="submit" value="Sign me up!">
@@ -58,44 +58,29 @@
     <script src="scripts/init.js"></script>
 
     <script>
-    const textForm = document.querySelector("#textSubmit");
-    textForm.addEventListener("click", (event) => {
-        console.log("Active");
-        event.stopDefault();
+    const textForm = document.querySelector("#textForm")
+    textForm.addEventListener("submit", (ev) => {
+
+        ev.preventDefault();
+        ev.stopPropagation();
+
         window.alert("You've signed up " + document.getElementById("text-name").value + " at " + document.getElementById("text-number").value);
+
+
+    }) 
     
+    const emailForm = document.querySelector("#emailForm")
+    emailForm.addEventListener("submit", (ev) => {
 
-    
-    })
-
-
-     const emailForm= document.querySelector("#emailSubmit");
-    emailForm.addEventListener("click", (event) => {
-        
-        event.stopDefault();
+        ev.preventDefault();
+        ev.stopPropagation();
 
         window.alert("You've signed up " + document.getElementById("email-name").value + " at " + document.getElementById("email-address").value);
-     
-    
-    })
-    
+
+
+    }) 
     
     </script>
-
-<script>
-    function validateForm() {
-     
-      var phoneNumber = document.getElementById("text-number").value;
-      if (phoneNumber.checkValidity()) {
-
-        return true;
-      } else {
-        
-        alert("Please enter a valid phone number in the format 123-456-7890.");
-        return false;
-      }
-    }
-  </script>
 
 </body>
 

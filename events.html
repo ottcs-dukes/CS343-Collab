@@ -45,27 +45,6 @@
                 <button type="submit">Sign Up</button>
               </form>
               
-              <script>
-                // get the signup form and add a submit event listener
-                const signupForm = document.getElementById('signup-form');
-                signupForm.addEventListener('submit', (event) => {
-                  // prevent the form from submitting
-                  event.preventDefault();
-              
-                  // get the email input field and its value
-                  const emailInput = document.getElementById('email');
-                  const email = emailInput.value;
-              
-                  // validate the email address
-                  if (!email || !email.includes('@')) {
-                    alert('Please enter a valid email address');
-                    return;
-                  }
-              
-                  // if the email is valid, submit the form
-                  signupForm.submit();
-                });
-              </script>
         </main>
         <script src="scripts/init.js"></script>
     </body>
