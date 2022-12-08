@@ -1,4 +1,4 @@
-let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle;
+let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle, articleContent, articleLink, editForm;
 
 function buildCard(article) {
   let outer = document.createElement('div');
@@ -7,16 +7,17 @@ function buildCard(article) {
 
   let title = document.createElement('h1');
   title.classList.add("card-header");
-
   if (article.new) {
     title.classList.add('bg-purple');
   }
+  title.id = article.id + "-title";
 
   title.textContent = article.title;
   outer.append(title);
 
   let content = document.createElement('p');
   content.classList.add("card-body");
+  content.id = article.id + "-content";
   content.innerText = article.content;
   outer.append(content);
 
@@ -25,6 +26,7 @@ function buildCard(article) {
 
   let btn = document.createElement('a');
   btn.classList.add("btn", "btn-purple", "animate");
+  btn.id = article.id + "-link";
   btn.textContent = "Read the full article";
   btn.href = article.href;
   footer.append(btn);
@@ -33,8 +35,6 @@ function buildCard(article) {
   id.classList.add("badge", "bg-secondary", "animate", "mx-2");
   id.textContent = "ArticleID: " + article.id;
   footer.append(id);
-
-  // <button class="btn btn-gold animate m-1" data-bs-toggle="modal" data-bs-target="#editModal" onclick="addModal()">Add article</button>
 
   outer.append(footer);
 
@@ -57,8 +57,14 @@ function editModal() {
   loadButton.style.display = "inline-block";
 }
 
-function fillModal() {
+function fillModal(id) {
+  articleTitle.value = document.getElementById(id + '-title').innerText;
+  articleContent.value = document.getElementById(id + '-content').textContent;
+  articleLink.value = document.getElementById(id + '-link').href;
+}
 
+function submitModal(id) {
+  
 }
 
 function exportData() {
@@ -72,10 +78,20 @@ function exportData() {
 (function () {
   main = document.getElementsByTagName('main')[0];
   modalTitle = document.getElementById("modalTitle");
+  editForm = document.getElementById('editForm');
+
   articleId = document.getElementById("articleId");
+  articleTitle = document.getElementById("articleTitle");
+  articleContent = document.getElementById("articleContent");
+  articleLink = document.getElementById("articleLink");
+
+  articleTitle.value = '';
+  articleContent.value = '';
+  articleLink.value = '';
+
   loadButton = document.getElementById("loadButton");
   loadButton.onclick = () => {
-    fillModal(articleId);
+    fillModal(articleId.value);
   }
   fetch('articles.json').then(response => {
     response.text().then((text) => {

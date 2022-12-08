@@ -28,17 +28,23 @@
                 </div>
                 <div class="modal-body">
                     <form id="editForm">
-                        <div class="mb-3 mt-3">
-                            <label for="articleId" class="form-label">ArticleID:
+                            <label for="articleId" class="form-label container-fluid">ArticleID:
                                 <input type="number" class="form-control" id="articleId" placeholder="0"
                                     name="articleId">
                             </label>
-                            <button type="button" class="btn btn-gold animate m-1" id="loadButton">Load</button>
-                            <label for="articleTitle" class="form-label">Title:
-                                <input type="number" class="form-control" id="articleTitle" placeholder="Title"
+                            <button type="button" class="btn btn-gold animate d-block mx-auto" id="loadButton">Load</button>
+                            <label for="articleTitle" class="form-label container-fluid">Title:
+                                <input type="text" class="form-control" id="articleTitle" placeholder="Title"
                                     name="articleTitle">
                             </label>
-                        </div>
+                            <label for="articleContent" class="form-label container-fluid">Content:
+                                <textarea class="form-control" id="articleContent" placeholder="Lorem ipsum dolor sit amet"
+                                    name="articleContent"></textarea>
+                            </label>
+                            <label for="articleLink" class="form-label container-fluid">Link:
+                                <input type="text" class="form-control text-primary" id="articleLink" placeholder="Https://"
+                                    name="articleLink">
+                            </label>
                     </form>
                 </div>
                 <div class="modal-footer">
