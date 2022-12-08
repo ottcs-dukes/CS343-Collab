@@ -82,7 +82,7 @@
         <div class="card-body">Get the latest JMU headlines and announcements!</div>
     </div>
     <main class="container-fluid"></main>
-    <aside class="container-fluid pb-5 mb-5">
+    <aside class="container-fluid pb-5 my-5">
         <div class="card mx-auto d-block">
             <h1 class="card-header">Content Editor</h1>
             <p class="card-body">Use the buttons below to contribute to the Duke Download!</p>
@@ -91,6 +91,8 @@
                 <button class="btn btn-gold animate m-1" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editModal()">Edit article</button>
                 <button class="btn btn-gold animate m-1" onclick="deleteArticle()">Delete article</button>
                 <button class="btn btn-gold animate m-1" onclick="exportData()">Export Data</button>
+                <button class="btn btn-gold animate m-1" onclick="localStorage.clear();">Delete changes</button>
+                
             </div>
         </div>
     </aside>

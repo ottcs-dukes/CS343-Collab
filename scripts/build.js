@@ -2,7 +2,7 @@ let newsArticles, exportButton, loadButton, main, modalTitle, articleId, article
 
 function buildCard(article) {
   let outer = document.createElement('div');
-  outer.classList.add("card", "mt-5", "mx-auto", "mb-5");
+  outer.classList.add("card", "mt-5", "mx-auto");
   outer.id = article.id;
 
   let title = document.createElement('h1');
@@ -44,6 +44,7 @@ function buildCard(article) {
 function render() {
   main.innerHTML = ''; // Easiest way to clear all of the articles
   newsArticles.map((article) => { let card = buildCard(article); if (article.new) {main.prepend(card)} else {main.append(card)} });
+  localStorage.setItem('cs343Articles', JSON.stringify(newsArticles));
 }
 
 function addModal() {
@@ -111,6 +112,16 @@ function pushDelete() {
   render();
 }
 
+function loadData() {
+  let stored = localStorage.getItem('cs343Articles')
+  if (stored) {
+    newsArticles = JSON.parse(stored);
+    render();
+  } else {
+    fetch("articles.json").then((response) => { response.text().then((text) => { newsArticles = JSON.parse(text)["content"]; render();}) })
+  }
+}
+
 (function () {
   main = document.getElementsByTagName('main')[0];
   modal = document.getElementById('editModal');
@@ -138,12 +149,7 @@ function pushDelete() {
 
   deleteId = document.getElementById('deleteId');
 
-  fetch('articles.json').then(response => {
-    response.text().then((text) => {
-      newsArticles = JSON.parse(text)["content"];
-      render();
-    })
-  });
+  loadData();
 })();
 
 
