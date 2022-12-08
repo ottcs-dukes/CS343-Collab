@@ -1,4 +1,4 @@
-let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle, articleContent, articleLink, editForm;
+let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle, articleContent, articleLink, editForm, submitButton, modal, articleNew;
 
 function buildCard(article) {
   let outer = document.createElement('div');
@@ -42,16 +42,19 @@ function buildCard(article) {
 }
 
 function render() {
-  newsArticles.map((article) => { main.appendChild(buildCard(article)) });
+  main.innerHTML = ''; // Easiest way to clear all of the articles
+  newsArticles.map((article) => { let card = buildCard(article); if (article.new) {main.prepend(card)} else {main.append(card)} });
 }
 
 function addModal() {
+  clearModalForm();
   modalTitle.textContent = "Adding Content";
   articleId.value = performance.now() * 617 % 99991; // Cheap hash
   loadButton.style.display = "none";
 }
 
 function editModal() {
+  clearModalForm();
   modalTitle.textContent = "Editing Content";
   articleId.value = null;
   loadButton.style.display = "inline-block";
@@ -61,10 +64,23 @@ function fillModal(id) {
   articleTitle.value = document.getElementById(id + '-title').innerText;
   articleContent.value = document.getElementById(id + '-content').textContent;
   articleLink.value = document.getElementById(id + '-link').href;
+  articleNew.checked = document.getElementById(id + '-title').classList.contains('bg-purple');
 }
 
 function submitModal(id) {
-  
+  let target = null;
+  for (let article of newsArticles) {
+    if (article.id == id)
+      target = article;
+  }
+  if (target == null) {
+    target = {id: id}
+    newsArticles.push(target);
+  }
+  target.title = articleTitle.value;
+  target.content = articleContent.value;
+  target.href = articleLink.value;
+  target.new = articleNew.checked;
 }
 
 function exportData() {
@@ -75,8 +91,15 @@ function exportData() {
   a.click();
 }
 
+function clearModalForm() {
+  articleTitle.value = '';
+  articleContent.value = '';
+  articleLink.value = '';
+}
+
 (function () {
   main = document.getElementsByTagName('main')[0];
+  modal = document.getElementById('editModal');
   modalTitle = document.getElementById("modalTitle");
   editForm = document.getElementById('editForm');
 
@@ -84,15 +107,21 @@ function exportData() {
   articleTitle = document.getElementById("articleTitle");
   articleContent = document.getElementById("articleContent");
   articleLink = document.getElementById("articleLink");
+  articleNew = document.getElementById("articleNew");
 
-  articleTitle.value = '';
-  articleContent.value = '';
-  articleLink.value = '';
+  clearModalForm();
 
   loadButton = document.getElementById("loadButton");
   loadButton.onclick = () => {
     fillModal(articleId.value);
   }
+
+  submitButton = document.getElementById('submitButton');
+  submitButton.onclick = () => {
+    submitModal(articleId.value);
+    render();
+  }
+
   fetch('articles.json').then(response => {
     response.text().then((text) => {
       newsArticles = JSON.parse(text)["content"];
