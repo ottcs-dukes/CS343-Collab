@@ -1,4 +1,4 @@
-let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle, articleContent, articleLink, editForm, submitButton, modal, articleNew;
+let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle, articleContent, articleLink, editForm, submitButton, modal, articleNew, deleteId = null;
 
 function buildCard(article) {
   let outer = document.createElement('div');
@@ -97,6 +97,20 @@ function clearModalForm() {
   articleLink.value = '';
 }
 
+function deleteArticle() {
+  let deleteModal = new bootstrap.Modal(document.querySelector('#deleteModal'));
+  deleteModal.show();
+}
+
+function pushDelete() {
+  for (let article of newsArticles) {
+    if (article.id == deleteId.value)
+      target = article;
+  }
+  newsArticles = newsArticles.filter(entry => {return entry != target});
+  render();
+}
+
 (function () {
   main = document.getElementsByTagName('main')[0];
   modal = document.getElementById('editModal');
@@ -121,6 +135,8 @@ function clearModalForm() {
     submitModal(articleId.value);
     render();
   }
+
+  deleteId = document.getElementById('deleteId');
 
   fetch('articles.json').then(response => {
     response.text().then((text) => {
