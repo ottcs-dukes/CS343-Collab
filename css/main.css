@@ -1,7 +1,9 @@
 :root {
     --bh: 15px;
     --jmuPurple: #450084;
+    --jmuPurpleFaint: #450084a0;
     --jmuGold: #dfd2aa;
+    --jmuGoldFaint: #dfd2aaa0;
     --anim-list: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
 }
 
@@ -14,10 +16,12 @@
 }
 
 .bg-purple {
+    color: #fff;
     background-color: var(--jmuPurple);
 }
 
 .bg-gold {
+    color: #000;
     background-color: var(--jmuGold);
 }
 
@@ -54,21 +58,23 @@ main {
 }
 
 .btn-purple {
+    color: #fff;
     background-color: var(--jmuPurple);
 }
 
 .btn-purple:hover {
-    background-color: var(--jmuPurple);
-    opacity: 0.8;
+    color: #fff;
+    background-color: var(--jmuPurpleFaint);
 }
 
 .btn-gold {
+    color: #000;
     background-color: var(--jmuGold);
 }
 
 .btn-gold:hover {
-    background-color: var(--jmuGold);
-    opacity: 0.8;
+    color: #000;
+    background-color: var(--jmuGoldFaint);
 }
 
 .text-purple {

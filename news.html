@@ -20,19 +20,28 @@
             <a class="nav-link" href="sports.html">SPORTS</a>
         </li>
     </nav>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="modal-title">Population query</span>
+                    <span class="modal-title" id="modalTitle">Content</span>
                 </div>
                 <div class="modal-body">
-                    <form id="queryForm">
-
+                    <form id="editForm">
+                        <div class="mb-3 mt-3">
+                            <label for="articleId" class="form-label">ArticleID:
+                                <input type="number" class="form-control" id="articleId" placeholder="0"
+                                    name="articleId">
+                            </label>
+                            <button type="button" class="btn btn-gold animate m-1" id="loadButton">Load</button>
+                            <label for="articleTitle" class="form-label">Title:
+                                <input type="number" class="form-control" id="articleTitle" placeholder="Title"
+                                    name="articleTitle">
+                            </label>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bs-target="#exampleModal">Close</button>
                     <button type="button" class="btn btn-primary" id="queryButton">Submit</button>
                 </div>
             </div>
@@ -50,7 +59,9 @@
             <h1 class="card-header">Content Editor</h1>
             <p class="card-body">Use the buttons below to contribute to the Duke Download!</p>
             <div class="card-footer">
-                <button class="btn btn-gold animate m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Add article</button>
+                <button class="btn btn-gold animate m-1" data-bs-toggle="modal" data-bs-target="#editModal" onclick="addModal()">Add article</button>
+                <button class="btn btn-gold animate m-1" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editModal()">Edit article</button>
+                <button class="btn btn-gold animate m-1" onclick="exportData()">Export Data</button>
             </div>
         </div>
     </aside>
