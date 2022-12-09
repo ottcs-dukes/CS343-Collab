@@ -1,11 +1,22 @@
+ <!--signup.html allows users to submit their email or phone number (has to be validated)
+     for a hypothetical newsletter subscription service.-->
+
+  <!--
+    Nino: Added validation and events (window alerts) to forms.
+    Cooper: Added forms.
+  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="Cooper Ott/Nino Debarros" content="Cooper Ott/Nino Debarros">
     <title>The Duke Download | Sign Up</title>
 </head>
 
 <body id="top">
+    <!--Navigation Bar-->
     <nav class="nav nav-justified">
         <li class="nav-item">
             <a class="nav-link" href="index.html">HOME</a>
@@ -27,6 +38,7 @@
             <div class="card-body">Sign up to recieve the news however you'd like to! We currently have options for
                 email and text.</div>
         </div>
+        <!--Email form with Regex-->
         <div class="card mt-5 mx-auto d-block">
             <h1 class="card-header">Email: Right to your inbox</h1>
             <form id="emailForm" class="form-group card-body" onsubmit="return false">
@@ -40,11 +52,12 @@
                 <input id="emailSubmit" class="btn btn-purple text-white animate" type="submit" value="Sign me up!">
             </form>
         </div>
+        <!--Text (Phone) form with Regex-->
         <div class="card mt-5 mx-auto d-block">
             <h1 class="card-header">Text: Keeping it Casual</h1>
             <form id="textForm" class="form-group card-body">
-                <label for="text-name" for="text-name-label">Name:</label><br>
-                <input aria-labelledby="text-name-label" class="form-control" type="text" id="text-name"
+                <label for="text-name" >Name:</label><br>
+                <input aria-labelledby="text-name" class="form-control" type="text" id="text-name"
                     name="text-name" value="FirstName LastName"><br>
                 <label for="text-number">Text:</label><br>
                 <input class="form-control" type="tel" name="text-number" id="text-number" value="123-456-7890"
@@ -56,8 +69,9 @@
         </div>
 
     </main>
-    <script src="scripts/init.js"></script>
 
+    <script src="scripts/init.js"></script>
+    <!--The following script simulates a successful signup using window alerts and prevents the refreshing of the page on click. -->
     <script>
         const textForm = document.querySelector("#textForm")
         textForm.addEventListener("submit", (ev) => {

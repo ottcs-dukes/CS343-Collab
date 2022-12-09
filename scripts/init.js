@@ -1,3 +1,5 @@
+// build.js runs to set up crucial aspects of the website including connecting style sheets, setting common elements, etc.
+
 (function () {
     let build = (e, classes) => {
         let element = document.createElement(e);
@@ -7,16 +9,22 @@
         return element;
     }
 
+    //Set standards for each page.
+
     let meta = document.createElement('meta');
     meta.name="viewport";
     meta.content="width=device-width, initial-scale=1";
     meta.charset="UTF-8";
     document.head.append(meta);
 
+    //import Bootstrap classes
+
     let bStyle = document.createElement('link');
     bStyle.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css";
     bStyle.rel = "stylesheet";
     document.head.append(bStyle);
+
+    //import custom CSS classes
 
     let myStyle = document.createElement('link');
     myStyle.href = "css/main.css";

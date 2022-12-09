@@ -1,11 +1,24 @@
+ <!--news.html is a powerhouse page that constructs 
+    articles from a JSON file while also allowing 
+    the user to add articles and export the JSON using Blob. -->
+
+  <!--
+    Nino: Created button for Blob export. 
+    Cooper: Constructed modals for article creation.
+
+    See build.js for more.
+  -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>The Duke Download | Home</title>
+  <meta charset="UTF-8">
+  <meta name="Cooper Ott/Nino Debarros" content="Cooper Ott/Nino Debarros">
+  <title>The Duke Download | Home</title>
 </head>
 
 <body id="top">
+    <!--Navigation Bar-->
     <nav class="nav nav-justified">
         <li class="nav-item">
             <a class="nav-link" href="index.html">HOME</a>
@@ -81,6 +94,8 @@
         <h1 class="card-header">The Duke Download: JMU News</h1>
         <div class="card-body">Get the latest JMU headlines and announcements!</div>
     </div>
+
+    <!--Content Editor - Add, edit, or delete an article. Export data using Blob in build.js.-->
     <main class="container-fluid"></main>
     <aside class="container-fluid pb-5 my-5">
         <div class="card mx-auto d-block">
