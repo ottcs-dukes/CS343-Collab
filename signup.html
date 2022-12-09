@@ -1,47 +1,47 @@
- <!--signup.html allows users to submit their email or phone number (has to be validated)
-     for a hypothetical newsletter subscription service.-->
+    <!--signup.html allows users to submit their email or phone number (has to be validated)
+        for a hypothetical newsletter subscription service.-->
 
-  <!--
-    Nino: Added validation and events (window alerts) to forms.
-    Cooper: Added forms.
-  -->
+    <!--
+        Nino: Added validation and events (window alerts) to forms.
+        Cooper: Added forms.
+    -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="Cooper Ott/Nino Debarros" content="Cooper Ott/Nino Debarros">
-    <title>The Duke Download | Sign Up</title>
+  <meta charset="UTF-8">
+  <meta name="Cooper Ott/Nino Debarros" content="Cooper Ott/Nino Debarros">
+   <title>The Duke Download | Sign Up</title>
 </head>
 
 <body id="top">
     <!--Navigation Bar-->
-    <nav class="nav nav-justified">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">HOME</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="news.html">NEWS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="events.html">EVENTS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="sports.html">SPORTS</a>
-        </li>
-    </nav>
-    <main class="container-fluid pb-5 mb-5">
-        <div class="card mt-5 mx-auto d-block">
-            <img class="card-img-top" src="images/signup.jpg" alt="JMU Quad">
-            <h1 class="card-header">The Duke Download: Delivered Daily!</h1>
-            <div class="card-body">Sign up to recieve the news however you'd like to! We currently have options for
+  <nav class="nav nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="news.html">NEWS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="events.html">EVENTS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sports.html">SPORTS</a>
+    </li>
+  </nav>
+  <main class="container-fluid pb-5 mb-5">
+    <div class="card mt-5 mx-auto d-block">
+      <img class="card-img-top" src="images/signup.jpg" alt="JMU Quad">
+        <h1 class="card-header">The Duke Download: Delivered Daily!</h1>
+          <div class="card-body">Sign up to recieve the news however you'd like to! We currently have options for
                 email and text.</div>
-        </div>
+          </div>
         <!--Email form with Regex-->
-        <div class="card mt-5 mx-auto d-block">
+          <div class="card mt-5 mx-auto d-block">
             <h1 class="card-header">Email: Right to your inbox</h1>
-            <form id="emailForm" class="form-group card-body" onsubmit="return false">
+              <form id="emailForm" class="form-group card-body" onsubmit="return false">
                 <label for="email-name" id="email-name-label">Name:</label><br>
                 <input aria-labelledby="email-name-label" class="form-control" type="text" id="email-name"
                     name="email-name" value="FirstName LastName"><br>
@@ -50,27 +50,24 @@
                     id="email-address" value="yourEmail@dukes.jmu.edu" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     required><br>
                 <input id="emailSubmit" class="btn btn-purple text-white animate" type="submit" value="Sign me up!">
-            </form>
-        </div>
+              </form>
+          </div>
         <!--Text (Phone) form with Regex-->
-        <div class="card mt-5 mx-auto d-block">
+          <div class="card mt-5 mx-auto d-block">
             <h1 class="card-header">Text: Keeping it Casual</h1>
             <form id="textForm" class="form-group card-body">
-                <label for="text-name" >Name:</label><br>
+              <label for="text-name" >Name:</label><br>
                 <input aria-labelledby="text-name" class="form-control" type="text" id="text-name"
                     name="text-name" value="FirstName LastName"><br>
-                <label for="text-number">Text:</label><br>
+              <label for="text-number">Text:</label><br>
                 <input class="form-control" type="tel" name="text-number" id="text-number" value="123-456-7890"
                     pattern="^\d{3}-\d{3}-\d{4}$"><br>
                 <input id="textSubmit" class="btn btn-purple text-white animate" type="submit" value="Sign me up!">
             </form>
+    </div>
+  </main>
 
-
-        </div>
-
-    </main>
-
-    <script src="scripts/init.js"></script>
+  <script src="scripts/init.js"></script>
     <!--The following script simulates a successful signup using window alerts and prevents the refreshing of the page on click. -->
     <script>
         const textForm = document.querySelector("#textForm")
@@ -88,7 +85,5 @@
         })
 
     </script>
-
-</body>
-
+  </body>
 </html>
