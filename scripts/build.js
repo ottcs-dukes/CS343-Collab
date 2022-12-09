@@ -1,5 +1,12 @@
 let newsArticles, exportButton, loadButton, main, modalTitle, articleId, articleTitle, articleContent, articleLink, editForm, submitButton, modal, articleNew, deleteId = null;
 
+// build.js contains methods for reading a set of news articles described and stored in articles.json.
+// Articles can be built on the website using modals.
+// A Blob is provided for export of the JSON file.
+
+//Nino: Constructed JSON file of articles to be read and Blob export.
+//Cooper: Build construction methods to read articles and construct them.
+
 function buildCard(article) {
   let outer = document.createElement('div');
   outer.classList.add("card", "mt-5", "mx-auto");

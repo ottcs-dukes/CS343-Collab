@@ -1,78 +1,89 @@
+ <!--Sports.html describes a page with pictures of JMU sports teams and headlines. -->
+
+  <!--
+    Nino: Added badge to articles.
+    Cooper: Added carousel of sports events.
+  -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>The Duke Download | Sports</title>
+  <meta charset="UTF-8">
+  <meta name="Cooper Ott/Nino Debarros" content="Cooper Ott/Nino Debarros">
+  <title>The Duke Download | Sports</title>
 </head>
 
 <body id="top">
-    <nav class="nav nav-justified">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">HOME</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="news.html">NEWS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="events.html">EVENTS</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="#">SPORTS</a>
-        </li>
-    </nav>
+    <!--Navigation Bar-->
+  <nav class="nav nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="news.html">NEWS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="events.html">EVENTS</a>
+    </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">SPORTS</a>
+    </li>
+  </nav>
     <main class="container-fluid pb-5 mb-5">
-        <div class="card mt-5 mx-auto d-block">
-            <img class="card-img-top" src="images/sports.jpg" alt="JMU Quad">
-            <h1 class="card-header">The Duke Download: JMU Sports</h1>
+      <div class="card mt-5 mx-auto d-block">
+        <img class="card-img-top" src="images/sports.jpg" alt="JMU Quad">
+          <h1 class="card-header">The Duke Download: JMU Sports</h1>
             <div class="card-body">Check out great photos of JMU sports!</div>
-        </div>
-        <div class="card mt-5 mx-auto d-block">
-            <h1 class="card-header">JMU Football: 2022 Season <span class="badge bg-gold">Go Dukes!</span></h1>
-            <div id="footballCarousel" class="card-body carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#footballCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#footballCarousel" data-bs-slide-to="1"></button>
+      </div>
+        <!--Football Carousel-->
+      <div class="card mt-5 mx-auto d-block">
+        <h1 class="card-header">JMU Football: 2022 Season <span class="badge bg-gold">Go Dukes!</span></h1>
+          <div id="footballCarousel" class="card-body carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#footballCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#footballCarousel" data-bs-slide-to="1"></button>
+            </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/3/App_State_TD_celebration_lGm2m.jpg?width=1023&quality=80&format=jpg"
+                    alt="JMU football players high fiving" class="d-block w-100">
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/3/App_State_TD_celebration_lGm2m.jpg?width=1023&quality=80&format=jpg"
-                        alt="JMU football players high fiving" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/2/Latrele_celebrating_bzcR3.jpg?width=1023&quality80&format=jpg"
+                  <div class="carousel-item">
+                    <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/2/Latrele_celebrating_bzcR3.jpg?width=1023&quality80&format=jpg"
                         alt="JMU football player with arms stretched" class="d-block w-100">
-                    </div>
+                  </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#footballCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                  <span class="carousel-control-prev-icon"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#footballCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                  <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </div>
+        <!--Golf Carousel-->
         <div class="card mt-5 mx-auto d-block">
-            <h1 class="card-header">JMU Golf: 2022 Season</h1>
+          <h1 class="card-header">JMU Golf: 2022 Season</h1>
             <div id="golfCarousel" class="card-body carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#golfCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#golfCarousel" data-bs-slide-to="1"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/4/03_-_web_9H1Dt.png?width=1023&quality=80&format=jpg"
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#golfCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#golfCarousel" data-bs-slide-to="1"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/4/03_-_web_9H1Dt.png?width=1023&quality=80&format=jpg"
                         alt="A strong follow through on a golf swing" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/2/02_-_web_QI38n.png?width=1023&quality=80&format=jpg"
-                        alt="A good shot out of the bunker" class="d-block w-100">
-                    </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://d1hg55pco9dr97.cloudfront.net/images/2022/10/2/02_-_web_QI38n.png?width=1023&quality=80&format=jpg"
+                    alt="A good shot out of the bunker" class="d-block w-100">
+                </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#golfCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                  <span class="carousel-control-prev-icon"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#golfCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                  <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </div>
